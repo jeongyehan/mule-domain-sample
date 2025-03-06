@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd"></mule>
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="mule-domain-sample-app2Flow" doc:id="d5a97d95-7a1c-4cca-9447-5f3b476db07d" >
+		<http:listener doc:name="Listener" doc:id="abfae4bc-36e5-4f7b-ad37-c5314f479e8c" path="/domain/app2" config-ref="domainHTTPListenerConfig"/>
+		<set-payload value="App2 is working well" doc:name="Set Payload" doc:id="bf844bbc-cabf-4392-a35c-de82603dadb1" />
+	</flow>
+</mule>
